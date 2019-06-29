@@ -1,0 +1,54 @@
+#Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers.
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the miniMaxSum function below.
+def miniMaxSum(arr):
+    n=arr[0]
+    sum1=0
+    sum2=0
+    sum3=0
+    sum4=0
+    sum5=0
+    for i in range (0,len(arr)):
+        if(i!=0):
+            sum1+=arr[i]
+        if(i!=1):
+            sum2+=arr[i]
+        if(i!=2):
+            sum3+=arr[i]
+        if(i!=3):
+            sum4+=arr[i]
+        if(i!=4):
+            sum5+=arr[i]
+    g=sum1
+    if(sum2>g):
+        g=sum2
+    if(sum3>g):
+        g=sum3
+    if(sum4>g):
+        g=sum4
+    if(sum5>g):
+        g=sum5
+    s=sum1
+    if(sum2<s):
+        s=sum2
+    if(sum3<s):
+        s=sum3
+    if(sum4<s):
+        s=sum4
+    if(sum5<s):
+        s=sum5
+    print(s,g)
+        
+        
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)

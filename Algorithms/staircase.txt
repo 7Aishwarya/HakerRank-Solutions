@@ -1,0 +1,35 @@
+'''Consider a staircase of size n=4:
+
+   #
+  ##
+ ###
+####
+Observe that its base and height are both equal to n, and the image is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+
+Write a program that prints a staircase of size n.'''
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the staircase function below.
+def staircase(n):
+    sp=n-1
+    star=1
+    for i in range(0,n):
+        for j in range(0,sp):
+            print(" ",end="")
+        for k in range(0,star):
+            print("#",end="")
+        print("")
+        sp-=1
+        star+=1
+
+if __name__ == '__main__':
+    n = int(input())
+
+    staircase(n)
