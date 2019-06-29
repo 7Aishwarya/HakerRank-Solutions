@@ -1,0 +1,7 @@
+use for loops to display only odd natural numbers from 1 to 99.
+
+COUNTER=1
+while [  $COUNTER -lt 100 ]; do
+    echo $COUNTER
+    let COUNTER=COUNTER+2 
+done
