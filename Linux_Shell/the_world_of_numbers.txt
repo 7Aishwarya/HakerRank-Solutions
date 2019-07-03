@@ -1,0 +1,8 @@
+Given two integers, X and Y, find their sum, difference, product, and quotient.
+
+read p
+read q
+echo "$p + $q" |bc
+echo "$p - $q" |bc
+echo "$p * $q" |bc
+echo "scale=0; $p/$q" |bc
