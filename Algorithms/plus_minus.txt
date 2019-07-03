@@ -1,0 +1,49 @@
+'''Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros. 
+Print the decimal value of each fraction on a new line.
+Note: This challenge introduces precision problems. The test cases are scaled to six decimal places,
+ though answers with absolute error of up to (10)^(-4) are acceptable.
+'''
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the plusMinus function below.
+def plusMinus(arr):
+    c1=0
+    c2=0
+    c3=0
+    
+    for i in arr:
+        if(i>0):
+            c1 = c1 +1
+        if(i<0):
+            c2 = c2 +1
+        if(i==0):
+            c3 = c3 +1
+        
+    c = [c1,c2,c3]
+    y = len(arr)
+    for x in c:
+        d = x / y
+        for i in range(0, 7): 
+            print(d)
+            x = x - (y * d) 
+            if x == 0: 
+                 break
+            x = x * 10
+            d = x / y
+            if (i == 0): 
+                print(".", end = "") 
+
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
+
