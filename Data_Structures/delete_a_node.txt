@@ -1,0 +1,85 @@
+'''You’re given the pointer to the head node of a linked list and the position of a node to delete. 
+Delete the node at the given position and return the head node. A position of 0 indicates head, 
+a position of 1 indicates one node away from the head and so on. The list may become empty after you 
+delete the node.'''
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+class SinglyLinkedListNode:
+    def __init__(self, node_data):
+        self.data = node_data
+        self.next = None
+
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def insert_node(self, node_data):
+        node = SinglyLinkedListNode(node_data)
+
+        if not self.head:
+            self.head = node
+        else:
+            self.tail.next = node
+
+
+        self.tail = node
+
+def print_singly_linked_list(node, sep, fptr):
+    while node:
+        fptr.write(str(node.data))
+
+        node = node.next
+
+        if node:
+            fptr.write(sep)
+
+# Complete the deleteNode function below.
+
+#
+# For your reference:
+#
+# SinglyLinkedListNode:
+#     int data
+#     SinglyLinkedListNode next
+#
+#
+def deleteNode(head, position):
+    currentnode = head
+    length = 0
+    while currentnode is not None:
+        length+=1
+        currentnode = currentnode.next
+    if position<0 or position>=length:
+        return
+    if head is not None:
+        if position is 0 :
+            previous = head
+            head = head.next
+            previous.next = None
+            return head
+    temp = head
+    pos = 0 
+    while True:
+        if pos == position:
+            previousnode.next = temp.next
+            temp.next = None
+            break
+        previousnode = temp
+        temp = temp.next
+        pos+=1
+    return head  
+
+    return head
+
+
+
+
+if __name__ == '__main__':
