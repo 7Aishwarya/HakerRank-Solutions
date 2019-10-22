@@ -1,0 +1,30 @@
+/*
+Read some unknown n lines of input from stdin(System.in) until you reach EOF; each line of input contains a non-empty String.
+
+Output Format
+
+For each line, print the line number, followed by a single space, and then the line content received as input.
+*/
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scan = new Scanner(System.in);
+        String line;
+        int n=1;
+        while(scan.hasNext())
+        {
+            line = scan.nextLine();
+            System.out.println(n + " " +line);
+            n++;
+        }
+        
+
+    }
+}
+
