@@ -1,0 +1,50 @@
+/*
+The first line contains a string A. The second line contains another string B. The strings are comprised of only lowercase English letters.
+
+Output Format
+
+There are three lines of output:
+For the first line, sum the lengths of A and B.
+For the second line, write Yes if A is lexicographically greater than B otherwise print No instead.
+For the third line, capitalize the first letter in both A and B and print them on a single line, separated by a space.
+
+Sample Input
+hello
+java
+
+Sample Output 
+9
+No
+Hello Java
+*/
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String B=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        int a = A.length();
+        int b = B.length();
+        System.out.println(a + b);
+        int c = A.compareTo(B);
+        if(c>0)
+        System.out.println("Yes");
+        else
+        System.out.println("No");
+        char ch1[] = A.toCharArray();
+        char ch2[] = B.toCharArray();
+        ch1[0] = (char)(ch1[0] - 'a' + 'A');
+        ch2[0] = (char)(ch2[0] - 'a' + 'A');
+        System.out.println(String.valueOf(ch1) + " " + String.valueOf(ch2));
+    }
+}
+
+
+
